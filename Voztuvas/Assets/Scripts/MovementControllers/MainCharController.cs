@@ -33,6 +33,7 @@ public class MainCharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isGrounded());
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
 
@@ -64,7 +65,7 @@ public class MainCharController : MonoBehaviour
 
     bool isGrounded()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(Coll.bounds.center, Coll.bounds.size, 0, Vector2.down, 0.02f, layer.value);
+        RaycastHit2D hit = Physics2D.BoxCast(Coll.bounds.min, Coll.bounds.size/20, 0, Vector2.down, -0.01f, layer.value);
         return hit.collider != null;
     }
 
