@@ -32,8 +32,9 @@ public class CharAnimationController : MonoBehaviour
         }
     }
 
-    public void AttackAnimation()
+    public void AttackAnimation(float AttackSpeed)
     {
+        Anim.SetFloat("MeeleAttack", AttackSpeed);
         Anim.SetTrigger("Attack");
     }
 

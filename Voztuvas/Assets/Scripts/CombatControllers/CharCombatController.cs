@@ -29,6 +29,6 @@ public class CharCombatController : MonoBehaviour
     void AttackCommit()
     {
         NextAttack += Weapon.cooldown;
-        CAC.AttackAnimation();
+        CAC.AttackAnimation(Weapon.cooldown);
     }
 }
