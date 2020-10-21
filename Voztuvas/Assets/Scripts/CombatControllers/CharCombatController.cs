@@ -14,21 +14,22 @@ public class CharCombatController : MonoBehaviour
     void Start()
     {
         NextAttack = Time.time;
-        CAC =this.GetComponent<CharAnimationController>();
+        CAC = this.GetComponent<CharAnimationController>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time >= NextAttack)
+        NextAttack += Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space) && Weapon.cooldown <= NextAttack)
         {
-            AttackCommit();
+            NextAttack = 0;
+            Invoke("AttackCommit", 0);
         }
     }
 
     void AttackCommit()
     {
-        NextAttack += Weapon.cooldown;
+        
         CAC.AttackAnimation(Weapon.cooldown);
     }
 }

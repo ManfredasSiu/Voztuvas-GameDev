@@ -35,8 +35,10 @@ public class CharAnimationController : MonoBehaviour
     public void AttackAnimation(float AttackSpeed)
     {
         //float currentMult = Anim.GetFloat("MeeleAttack");
+        
         Anim.SetFloat("MeeleAttack", 0.5f/AttackSpeed);
         Anim.SetTrigger("Attack");
+
     }
 
     public void GroundMovingAnimation(float xAxis, bool isGrounded)
