@@ -9,11 +9,12 @@ public class CharCombatController : MonoBehaviour
     public Meele_Weapon_Object Weapon;
     // Start is called before the first frame update
 
-    float NextAttack;
+    private Collider2D MeeleWeaponTrigger;
+
+    float NextAttack = 0;
 
     void Start()
     {
-        NextAttack = Time.time;
         CAC = this.GetComponent<CharAnimationController>();
     }
     // Update is called once per frame
