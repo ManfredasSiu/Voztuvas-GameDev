@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Assets.Scripts.Entities
 {
@@ -7,10 +8,12 @@ namespace Assets.Scripts.Entities
         [SerializeField]
         private float _health = 100;
 
+        public Action<float> healthUpdateEvent;
+
         void ApplyDamage(float damage)
         {
             _health -= damage;
-
+            healthUpdateEvent?.Invoke(_health);
             if (_health <= 0)
                 Destroy(gameObject);
         }
