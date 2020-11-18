@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharAnimationController : MonoBehaviour
 {
 
-    private bool LookingRight = true;
+    public bool LookingRight = true;
     private bool Walking = false;
     private bool Running = false;
     private bool Jumping = false;

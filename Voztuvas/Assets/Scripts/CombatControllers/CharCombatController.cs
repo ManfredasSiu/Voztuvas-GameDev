@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Entities;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,14 +8,15 @@ public class CharCombatController : MonoBehaviour
     CharAnimationController CAC;
 
     public Meele_Weapon_Object Weapon;
-    // Start is called before the first frame update
 
-    private Collider2D MeeleWeaponTrigger;
+    private CapsuleCollider2D charCollider;
 
     float NextAttack = 0;
+    float direction = -1;
 
     void Start()
     {
+        charCollider = this.GetComponent<CapsuleCollider2D>();
         CAC = this.GetComponent<CharAnimationController>();
     }
     // Update is called once per frame
@@ -31,5 +33,34 @@ public class CharCombatController : MonoBehaviour
     void AttackCommit()
     {
         CAC.AttackAnimation(Weapon.cooldown);
+        if (Weapon.Meele)
+            MeeleAttack();
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (charCollider != null)
+            Gizmos.DrawCube(new Vector2(this.transform.position.x + 1f*direction, this.transform.position.y), charCollider.bounds.size);
+    }
+
+    void MeeleAttack()
+    {
+        if (CAC.LookingRight)
+            direction = 1;
+        else
+            direction = -1;
+
+        var hit = Physics2D.BoxCastAll(new Vector2(this.transform.position.x + 1f*direction, this.transform.position.y), charCollider.bounds.size, 0, Vector2.up);
+        if(hit != null)
+        {
+            foreach(var col in hit)
+            {
+                var health = col.collider.gameObject.GetComponent<HealthController>();
+                if(health != null)
+                {
+                    health.ApplyDamage(Weapon.DMG);
+                }
+            }
+        }
     }
 }
