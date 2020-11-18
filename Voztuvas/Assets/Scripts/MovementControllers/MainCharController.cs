@@ -63,9 +63,15 @@ public class MainCharController : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        if(Coll != null)
+            Gizmos.DrawCube(new Vector2(Coll.bounds.center.x, Coll.bounds.min.y), new Vector3(Coll.bounds.size.x*0.8f, 0.1f));
+    }
+
     bool isGrounded()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(Coll.bounds.min, Coll.bounds.size/20, 0, Vector2.down, -0.01f, layer.value);
+        RaycastHit2D hit = Physics2D.BoxCast(new Vector2(Coll.bounds.center.x, Coll.bounds.min.y), new Vector3(Coll.bounds.size.x*0.8f, 0.1f), 0, Vector2.down, 0.1f, layer.value);
         return hit.collider != null;
     }
 
