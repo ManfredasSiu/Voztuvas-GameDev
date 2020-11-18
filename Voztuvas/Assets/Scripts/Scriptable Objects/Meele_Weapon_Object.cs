@@ -16,6 +16,7 @@ public class Meele_Weapon_Object : ScriptableObject
 {
     public weapons Type;
     public GameObject Weapon;
+    public bool Meele;
     public float DMG;
     public int hitCombo;
     public float cooldown;
