@@ -55,7 +55,6 @@ public class CharAnimationController : MonoBehaviour
         }
         else if (xAxis == 0 && ( Running || Walking))
         {
-            Debug.Log(xAxis);
             Running = false;
             Anim.SetBool("Running", false);
             Walking = false;

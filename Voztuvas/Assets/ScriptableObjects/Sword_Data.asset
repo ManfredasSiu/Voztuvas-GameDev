@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Weapon: {fileID: -7006669994869471816, guid: 8b312f4850c9e734482430d554c278e8, type: 3}
+  Meele: 1
   DMG: 10
   hitCombo: 1
   cooldown: 0.6

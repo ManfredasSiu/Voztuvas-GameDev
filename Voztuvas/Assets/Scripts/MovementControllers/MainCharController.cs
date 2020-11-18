@@ -33,7 +33,6 @@ public class MainCharController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isGrounded());
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
 
