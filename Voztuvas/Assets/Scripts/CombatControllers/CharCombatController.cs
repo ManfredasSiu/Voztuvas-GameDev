@@ -12,6 +12,7 @@ public class CharCombatController : MonoBehaviour
     private CapsuleCollider2D charCollider;
 
     float NextAttack = 0;
+    float direction = -1;
 
     void Start()
     {
@@ -39,12 +40,17 @@ public class CharCombatController : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (charCollider != null)
-            Gizmos.DrawCube(new Vector2(this.transform.position.x + 1f, this.transform.position.y), charCollider.bounds.size);
+            Gizmos.DrawCube(new Vector2(this.transform.position.x + 1f*direction, this.transform.position.y), charCollider.bounds.size);
     }
 
     void MeeleAttack()
     {
-        var hit = Physics2D.BoxCastAll(new Vector2(this.transform.position.x + 1f, this.transform.position.y), charCollider.bounds.size, 0, Vector2.up);
+        if (CAC.LookingRight)
+            direction = 1;
+        else
+            direction = -1;
+
+        var hit = Physics2D.BoxCastAll(new Vector2(this.transform.position.x + 1f*direction, this.transform.position.y), charCollider.bounds.size, 0, Vector2.up);
         if(hit != null)
         {
             foreach(var col in hit)
