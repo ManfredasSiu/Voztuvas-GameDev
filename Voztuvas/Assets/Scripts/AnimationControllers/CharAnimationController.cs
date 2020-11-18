@@ -38,9 +38,9 @@ public class CharAnimationController : MonoBehaviour
         
         Anim.SetFloat("MeeleAttack", 0.5f/AttackSpeed);
         Anim.SetTrigger("Attack");
-
+        
     }
-
+    
     public void GroundMovingAnimation(float xAxis, bool isGrounded)
     {
         if (Input.GetKey(KeyCode.LeftShift) && xAxis != 0 && isGrounded)
@@ -53,7 +53,7 @@ public class CharAnimationController : MonoBehaviour
             Walking = true;
             Anim.SetBool("Walking", true);
         }
-        else if (xAxis == 0 && ( Running == true || Walking == true))
+        else if (xAxis == 0 && ( Running || Walking))
         {
             Debug.Log(xAxis);
             Running = false;

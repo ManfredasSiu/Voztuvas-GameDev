@@ -30,7 +30,6 @@ public class CharCombatController : MonoBehaviour
 
     void AttackCommit()
     {
-        
         CAC.AttackAnimation(Weapon.cooldown);
     }
 }
