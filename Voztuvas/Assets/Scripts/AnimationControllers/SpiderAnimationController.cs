@@ -33,5 +33,10 @@ namespace Assets.Scripts.AnimationControllers
             _walking = isMoving;
             Anim.SetBool("Walking", isMoving);
         }
+
+        public void AttackAnimation()
+        {
+
+        }
     }
 }

@@ -3,47 +3,53 @@ using UnityEngine;
 
 public class SpiderMovementController : MonoBehaviour
 {
-    private Rigidbody2D RB;
-    private SpiderAnimationController CAC;
-
     [SerializeField] private float _speed = 2000;
-    [SerializeField] private float _visionRange = 10;
-    [SerializeField] private Transform _target;
+
+    private Rigidbody2D _rigidbody;
+    private SpiderAnimationController _animationController;
+
+    private Transform _target;
+    private bool _isMoving;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        RB = this.GetComponent<Rigidbody2D>();
-        this.GetComponent<Animator>();
-        this.GetComponent<BoxCollider2D>();
-        CAC = this.GetComponent<SpiderAnimationController>();
+        _rigidbody = this.GetComponent<Rigidbody2D>();
+        _animationController = this.GetComponent<SpiderAnimationController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (TargetInRange())
+        if (_isMoving)
         {
-            CAC.GroundMovingAnimation(isMoving: true);
+            _animationController.GroundMovingAnimation(isMoving: true);
             MoveToTarget();
         }
         else
         {
-            CAC.GroundMovingAnimation(isMoving: false);
+            _animationController.GroundMovingAnimation(isMoving: false);
         }
     }
 
-    private bool TargetInRange()
+    public void MoveToTarget(Transform target)
     {
-        return Vector3.Distance(transform.position, _target.position) <= _visionRange;
+        _target = target;
+        _isMoving = true;
+    }
+
+    public void StopMoving()
+    {
+        _isMoving = false;
     }
 
     private void MoveToTarget()
     {
         var direction = transform.position.x > _target.position.x ? -1 : 1;
-        CAC.ChangeDirection(-direction);
+        _animationController.ChangeDirection(-direction);
 
         //move towards target
-        RB.AddForce(Time.deltaTime * new Vector2(direction, 0) * _speed);
+        _rigidbody.AddForce(Time.deltaTime * new Vector2(direction, 0) * _speed);
     }
 }

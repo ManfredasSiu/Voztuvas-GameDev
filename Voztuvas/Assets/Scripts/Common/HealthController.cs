@@ -10,7 +10,7 @@ namespace Assets.Scripts.Entities
 
         public Action<float> healthUpdateEvent;
 
-        void ApplyDamage(float damage)
+        public void ApplyDamage(float damage)
         {
             _health -= damage;
             healthUpdateEvent?.Invoke(_health);
