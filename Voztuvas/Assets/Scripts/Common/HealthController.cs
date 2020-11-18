@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Scripts.Entities
 {
@@ -15,7 +16,16 @@ namespace Assets.Scripts.Entities
             _health -= damage;
             healthUpdateEvent?.Invoke(_health);
             if (_health <= 0)
-                Destroy(gameObject);
+            {
+                if (gameObject.tag == "Player")
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
     }
 }

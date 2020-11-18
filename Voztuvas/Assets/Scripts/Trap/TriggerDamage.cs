@@ -7,16 +7,18 @@ public class TriggerDamage : MonoBehaviour
 {
     public float damage;
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Spikes entered the players body!");
         var health = other.gameObject.GetComponent<HealthController>();
         if(health != null && other.gameObject.tag == "Player" || other.gameObject.tag == "Mob")
         {
             health.ApplyDamage(damage);
             var rb = health.gameObject.GetComponent<Rigidbody2D>();
             if (rb != null)
-                rb.AddForceAtPosition(new Vector2(20, 10), this.transform.position);
+                rb.AddForceAtPosition(new Vector2(100, 50), this.transform.position);
         }
-        Destroy(gameObject, 0.5f);
+        Destroy(this);
     }
 }
