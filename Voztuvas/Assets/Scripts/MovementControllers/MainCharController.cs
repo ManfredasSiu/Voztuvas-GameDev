@@ -8,6 +8,7 @@ public class MainCharController : MonoBehaviour
     private Animator Anim;
     private Collider2D Coll;
     private AudioSource AS;
+    public bool grounded;
 
     private CharAnimationController CAC;
 
@@ -41,6 +42,7 @@ public class MainCharController : MonoBehaviour
         CAC.JumpAnimation(RB.velocity.y, isGrounded());
 
         Xmovement(xAxis);
+        grounded = isGrounded();
         if (isGrounded())
             Ymovement(yAxis);
     }

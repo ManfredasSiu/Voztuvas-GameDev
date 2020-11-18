@@ -8,8 +8,8 @@ public class CharAnimationController : MonoBehaviour
     public bool LookingRight = true;
     private bool Walking = false;
     private bool Running = false;
-    private bool Jumping = false;
-    private bool Falling = false;
+    public bool Jumping = false;
+    public bool Falling = false;
 
     Animator Anim;
 

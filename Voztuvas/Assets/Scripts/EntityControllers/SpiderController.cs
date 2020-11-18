@@ -17,6 +17,7 @@ namespace Assets.Scripts.EntityControllers
         {
             _movementController = GetComponent<SpiderMovementController>();
             _combatController = GetComponent<SpiderCombatController>();
+            //_target = PlayerInfo.instance.player;
         }
 
         // Update is called once per frame
