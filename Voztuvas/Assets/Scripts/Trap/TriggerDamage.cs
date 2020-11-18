@@ -13,6 +13,9 @@ public class TriggerDamage : MonoBehaviour
         if(health != null && other.gameObject.tag == "Player" || other.gameObject.tag == "Mob")
         {
             health.ApplyDamage(damage);
+            var rb = health.gameObject.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.AddForceAtPosition(new Vector2(20, 10), this.transform.position);
         }
         Destroy(gameObject, 0.5f);
     }
