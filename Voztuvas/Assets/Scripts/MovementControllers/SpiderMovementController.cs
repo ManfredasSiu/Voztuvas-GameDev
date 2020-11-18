@@ -42,6 +42,7 @@ public class SpiderMovementController : MonoBehaviour
     public void StopMoving()
     {
         _isMoving = false;
+        _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
     }
 
     private void MoveToTarget()
@@ -50,6 +51,7 @@ public class SpiderMovementController : MonoBehaviour
         _animationController.ChangeDirection(-direction);
 
         //move towards target
-        _rigidbody.AddForce(Time.deltaTime * new Vector2(direction, 0) * _speed);
+        // _rigidbody.AddForce(Time.deltaTime * new Vector2(direction, 0) * _speed);
+        _rigidbody.velocity = new Vector2(direction * _speed * Time.deltaTime, _rigidbody.velocity.y);
     }
 }
