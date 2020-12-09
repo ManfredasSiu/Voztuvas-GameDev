@@ -2,6 +2,7 @@
 using Assets.Scripts.Entities;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class InventoryController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class InventoryController : MonoBehaviour
 
     public int potions = 0;
     public int potionHealingPower = 50;
+
+    public Action<int, Items> inventoryUpdateEvent;
 
     // Called each tick, reacts to keyboard input to consume items.
     private void Update()
@@ -26,6 +29,7 @@ public class InventoryController : MonoBehaviour
         {
             HPControler.Heal(potionHealingPower);
             potions--;
+            updateInventory(potions, Items.HealthPotion);
         }
     }
 
@@ -35,7 +39,13 @@ public class InventoryController : MonoBehaviour
         {
             case Items.HealthPotion:
                 potions++;
+                updateInventory(potions, Items.HealthPotion);
                 break;
         }
+    }
+
+    void updateInventory(int amount, Items itemType)
+    {
+        inventoryUpdateEvent?.Invoke(amount, itemType);
     }
 }
