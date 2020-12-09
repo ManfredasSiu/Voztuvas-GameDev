@@ -37733,7 +37733,7 @@ PrefabInstance:
     - target: {fileID: 5297315902501100937, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
       propertyPath: m_Name
-      value: 'TO-DO: Weapon equip instructions'
+      value: Weapon equip instructions
       objectReference: {fileID: 0}
     - target: {fileID: 5297315902869371334, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
@@ -41827,7 +41827,7 @@ GameObject:
   - component: {fileID: 1751906587}
   - component: {fileID: 1751906586}
   m_Layer: 0
-  m_Name: Sign-post-coloured
+  m_Name: Level Finish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42624,7 +42624,12 @@ PrefabInstance:
     - target: {fileID: 5297315902501100937, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
       propertyPath: m_Name
-      value: 'TO-DO: Level transition'
+      value: Level transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297315902501100937, guid: dfe0b5ea2e9015e42be8e66234594a64,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5297315902869371335, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
