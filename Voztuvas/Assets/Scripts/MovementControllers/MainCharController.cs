@@ -60,7 +60,7 @@ public class MainCharController : MonoBehaviour
         
         RB.velocity = new Vector2(Mathf.Clamp(RB.velocity.x, -clamp * multiplier, clamp * multiplier), RB.velocity.y );
         //RB.velocity = new Vector2(xAxis * Speed * multiplier * Time.deltaTime, RB.velocity.y);
-        Debug.Log(RB.velocity);
+        //Debug.Log(RB.velocity);
         if(xAxis == 0 && RB.velocity.y==0)
             RB.velocity = new Vector2(0, RB.velocity.y);
     }

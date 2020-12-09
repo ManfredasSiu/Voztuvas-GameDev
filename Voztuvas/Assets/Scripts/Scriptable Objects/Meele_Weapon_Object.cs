@@ -5,9 +5,10 @@ using UnityEngine;
 
 public enum weapons
 {
-    Sword = 0,
-    Rifle = 1,
-    Shotgun = 2,
+    None,
+    Sword,
+    Rifle,
+    Shotgun,
     Pistol
 }
 

@@ -8,13 +8,14 @@ namespace Assets.Scripts.Entities
     {
         [SerializeField]
         private float _health = 100;
+        public float maxHealth = 100;
 
         public Action<float> healthUpdateEvent;
 
         public void ApplyDamage(float damage)
         {
             _health -= damage;
-            healthUpdateEvent?.Invoke(_health);
+            updateHealth();
             if (_health <= 0)
             {
                 if (gameObject.tag == "Player")
@@ -26,6 +27,22 @@ namespace Assets.Scripts.Entities
                     Destroy(gameObject);
                 }
             }
+        }
+
+        public bool CanHeal()
+        {
+            return _health < maxHealth;
+        }
+
+        public void Heal(int amount)
+        {
+            _health = Math.Min(maxHealth, _health + amount);
+            updateHealth();
+        }
+
+        void updateHealth()
+        {
+            healthUpdateEvent?.Invoke(_health);
         }
     }
 }
