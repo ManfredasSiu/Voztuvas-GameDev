@@ -7,7 +7,9 @@ public class CharCombatController : MonoBehaviour
 {
     CharAnimationController CAC;
 
-    public Meele_Weapon_Object Weapon;
+    public Meele_Weapon_Object Sword;
+
+    public weapons currentlyEquiped;
 
     private CapsuleCollider2D charCollider;
 
@@ -23,17 +25,33 @@ public class CharCombatController : MonoBehaviour
     void Update()
     {
         NextAttack += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && Weapon.cooldown <= NextAttack)
+        if (Input.GetKey(KeyCode.Space) && Sword.cooldown <= NextAttack && currentlyEquiped != weapons.None)
         {
             NextAttack = 0;
             Invoke("AttackCommit", 0);
+        }
+        if(Input.GetKey(KeyCode.Q))
+        {
+            var raylist =Physics2D.BoxCastAll(transform.position, new Vector2(1f, 1f), 0, Vector2.down);
+            foreach (var ray in raylist)
+            {
+                if (ray.collider != null)
+                {
+                    var weap = ray.collider.gameObject.GetComponent<WeaponEquip>();
+                    if (weap != null)
+                    {
+                        currentlyEquiped = weap.weapons;
+                        Destroy(weap.gameObject);
+                    }
+                }
+            }
         }
     }
 
     void AttackCommit()
     {
-        CAC.AttackAnimation(Weapon.cooldown);
-        if (Weapon.Meele)
+        CAC.AttackAnimation(Sword.cooldown);
+        if (Sword.Meele)
             MeeleAttack();
     }
 
@@ -58,7 +76,7 @@ public class CharCombatController : MonoBehaviour
                 var health = col.collider.gameObject.GetComponent<HealthController>();
                 if(health != null)
                 {
-                    health.ApplyDamage(Weapon.DMG);
+                    health.ApplyDamage(Sword.DMG);
                 }
             }
         }
