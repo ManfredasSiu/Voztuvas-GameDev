@@ -186,7 +186,7 @@ Transform:
   m_Children:
   - {fileID: 865471166}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &15388558
 GameObject:
@@ -269,7 +269,7 @@ Transform:
   m_Children:
   - {fileID: 624563527}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &38607946
 GameObject:
@@ -381,7 +381,7 @@ Transform:
   m_Children:
   - {fileID: 2035011290}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55077638
 GameObject:
@@ -912,7 +912,7 @@ Transform:
   m_Children:
   - {fileID: 2102646124}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &190728807
 GameObject:
@@ -1583,7 +1583,7 @@ RectTransform:
   m_Children:
   - {fileID: 770199842}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -37330,7 +37330,7 @@ Transform:
   m_Children:
   - {fileID: 1195647518}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &733545684 stripped
 Transform:
@@ -37721,8 +37721,8 @@ PrefabInstance:
     - target: {fileID: 5297315903079205732, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
       propertyPath: m_Text
-      value: You have found a weapon. Press ??? to equip it. Afterwards, you may
-        press space to attack.
+      value: You have found a weapon. Press Q to equip it. Afterwards, you may press
+        space to attack.
       objectReference: {fileID: 0}
     - target: {fileID: 5297315903079205733, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
@@ -41449,7 +41449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684703825
 GameObject:
@@ -42169,6 +42169,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1868909604
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 103.49393
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.59234595
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.96608144
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.25823784
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113540310571748888, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -150.069
+      objectReference: {fileID: 0}
+    - target: {fileID: 8683180930180337591, guid: da4b020e881c07345be4493e07dc1521,
+        type: 3}
+      propertyPath: m_Name
+      value: EquipableSword
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da4b020e881c07345be4493e07dc1521, type: 3}
 --- !u!1 &1877051615
 GameObject:
   m_ObjectHideFlags: 0
@@ -42208,7 +42277,7 @@ Transform:
   - {fileID: 1782981929}
   - {fileID: 5946082674897360612}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1895889665
 GameObject:
@@ -42294,7 +42363,7 @@ PrefabInstance:
     - target: {fileID: 5297315902501100936, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5297315902501100936, guid: dfe0b5ea2e9015e42be8e66234594a64,
         type: 3}
@@ -42709,7 +42778,7 @@ Transform:
   - {fileID: 751680856}
   - {fileID: 777876991}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2035011289
 GameObject:
