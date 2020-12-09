@@ -2391,7 +2391,7 @@ PrefabInstance:
     - target: {fileID: 4507358048059189475, guid: b086442cb72e0ed4ebde0b42e68937fd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4507358048059189475, guid: b086442cb72e0ed4ebde0b42e68937fd,
         type: 3}
@@ -49023,6 +49023,12 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 644046208717495274, guid: 427fdae8d1c3e7845b4a8d2b70c2a562,
+        type: 3}
+      propertyPath: Sword
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d8c64b152e6015429d3c9fae7bd7b1f,
+        type: 2}
     - target: {fileID: 644046208717495275, guid: 427fdae8d1c3e7845b4a8d2b70c2a562,
         type: 3}
       propertyPath: m_Name
@@ -49081,7 +49087,7 @@ PrefabInstance:
     - target: {fileID: 3422231056794614102, guid: 427fdae8d1c3e7845b4a8d2b70c2a562,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3422231056794614102, guid: 427fdae8d1c3e7845b4a8d2b70c2a562,
         type: 3}
