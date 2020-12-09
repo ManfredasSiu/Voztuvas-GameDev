@@ -43,7 +43,7 @@ public class MainCharController : MonoBehaviour
 
         Xmovement(xAxis);
         grounded = isGrounded();
-        if (isGrounded())
+        if (grounded)
             Ymovement(yAxis);
     }
 
@@ -51,16 +51,29 @@ public class MainCharController : MonoBehaviour
     {
         float multiplier = 1;
         if (Input.GetKey(KeyCode.LeftShift))
+        {
             multiplier = RunningMultiplier;
-        RB.AddForce(Time.deltaTime * new Vector2(xAxis, 0) * Speed * multiplier);
+        }
+        float clamp = 4;
+
+        RB.AddForce(new Vector2(xAxis * Speed * multiplier * Time.deltaTime, 0));
+        
+        RB.velocity = new Vector2(Mathf.Clamp(RB.velocity.x, -clamp * multiplier, clamp * multiplier), RB.velocity.y );
+        //RB.velocity = new Vector2(xAxis * Speed * multiplier * Time.deltaTime, RB.velocity.y);
+        Debug.Log(RB.velocity);
+        if(xAxis == 0 && RB.velocity.y==0)
+            RB.velocity = new Vector2(0, RB.velocity.y);
     }
 
     void Ymovement(float yAxis)
     {
-        if(yAxis > 0) {
+        if (yAxis > 0)
+        {
             RB.velocity = new Vector2(RB.velocity.x, 0);
-            RB.AddForce(Time.deltaTime * new Vector2(0, JumpPower), ForceMode2D.Impulse);
-            RB.velocity = Vector2.ClampMagnitude(RB.velocity, 10);
+
+            RB.AddForce(new Vector2(0, Time.deltaTime * JumpPower), ForceMode2D.Impulse);
+
+            RB.velocity = new Vector2(RB.velocity.x, Mathf.Clamp(RB.velocity.y, -10, +10));
         }
     }
 
