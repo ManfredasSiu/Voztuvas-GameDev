@@ -20,7 +20,6 @@ public class GuideTextController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player position X: " + _player.transform.position.x + ", Text box position X:" + gameObject.transform.position.x);
         float distanceToPlayer = Mathf.Abs(gameObject.transform.position.x - _player.transform.position.x);
         if (distanceToPlayer <= displayDistance)
         {
