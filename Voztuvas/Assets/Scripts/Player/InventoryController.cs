@@ -14,6 +14,12 @@ public class InventoryController : MonoBehaviour
     public Action<int, Items> inventoryUpdateEvent;
 
     // Called each tick, reacts to keyboard input to consume items.
+
+    private void Start()
+    {
+        inventoryUpdateEvent?.Invoke(potions, Items.HealthPotion);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.H))
