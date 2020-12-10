@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Pathfinding;
 using UnityEngine;
 
 namespace Assets.Scripts.SpiderControllers
@@ -8,12 +9,13 @@ namespace Assets.Scripts.SpiderControllers
     {
         public bool CanStep = true;
         public bool WouldLikeToStep = false;
-        private float StepSize = 2f;
+        public float StepSize = 2f;
         public LayerMask GroundMask;
         public Transform Leg;
         public Transform Body;
         public Action OnStepStarted;
         public Action OnStepEnded;
+        public float VelScale = 1;
 
         private bool _isStepping = false;
 
@@ -35,7 +37,7 @@ namespace Assets.Scripts.SpiderControllers
         Vector2? GetTargetPoint()
         {
             var rotation = Body.TransformDirection(Vector3.down);
-            var velocity = ToVector3(Body.GetComponent<Rigidbody2D>().velocity)*0.35f;
+            var velocity = ToVector3(Body.GetComponent<AIPath>().desiredVelocity.normalized)*0.35f;
 
             var forDebug = new Vector3(rotation.x, rotation.y, rotation.z) + velocity;
             forDebug.Scale(new Vector3(30, 30, 30));
@@ -70,7 +72,7 @@ namespace Assets.Scripts.SpiderControllers
 
         IEnumerator MoveLegCoroutine(Vector2 target)
         {
-            if (!CanStep)
+            if (!CanStep || _isStepping)
                 yield break;
 
             _isStepping = true;

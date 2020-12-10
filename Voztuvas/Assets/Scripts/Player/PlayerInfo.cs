@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo: MonoBehaviour
+public class PlayerInfo : MonoBehaviour
 {
     public static PlayerInfo instance;
     public GameObject player;
@@ -11,6 +11,6 @@ public class PlayerInfo: MonoBehaviour
     private void Awake()
     {
         instance = this;
+        player = GameObject.Find("Mainchar");
     }
-
 }

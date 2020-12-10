@@ -33,7 +33,7 @@ namespace Assets.Scripts.SpiderControllers
 
         void Update()
         {
-            _xAxis = Input.GetAxis("Horizontal");
+            /*_xAxis = Input.GetAxis("Horizontal");
             _yAxis = Input.GetAxis("Vertical");
 
             if (Input.GetKey(KeyCode.Space))
@@ -49,6 +49,13 @@ namespace Assets.Scripts.SpiderControllers
                 {
                     RotateBody(optimalRotation);
                 }
+            }*/
+
+            var optimalRotation = ComputeOptimalRotation();
+
+            if (Math.Abs(transform.rotation.z - optimalRotation) >= RotationDelta)
+            {
+                RotateBody(optimalRotation);
             }
         }
 

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TutorialLevel.unity
     guid: eb0398980cafe4a4d80931804faca3a0
   - enabled: 1
+    path: Assets/Scenes/SpiderLevel.unity
+    guid: cbf9f991849628d40b6a9bea74476097
+  - enabled: 1
     path: Assets/Scenes/FirstLevel.unity
     guid: dff605c5f27a1c648b5db15f925cb788
   m_configObjects: {}
