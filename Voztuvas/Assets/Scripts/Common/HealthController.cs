@@ -24,7 +24,10 @@ namespace Assets.Scripts.Entities
                 }
                 else
                 {
-                    Destroy(gameObject);
+                    if (transform.parent == null)
+                        Destroy(gameObject);
+                    else
+                        Destroy(transform.parent.gameObject);
                 }
             }
         }
